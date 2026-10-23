@@ -54,10 +54,9 @@ Search by symptom, ingredient, or condition (for example, "I have cold and cough
 
 A guided 25-question assessment covering body, skin, digestion, and more. Progress is tracked as you move through the questions.
 
-<img width="953" height="419" alt="dosha-question" src="https://github.com/user-attachments/assets/d8935721-429e-4bb1-9c64-28778e30fff9" />
-
 <img width="947" height="435" alt="dosha-intro" src="https://github.com/user-attachments/assets/4f024efd-42b4-4585-9a5d-0a77019eda84" />
 
+<img width="953" height="419" alt="dosha-question" src="https://github.com/user-attachments/assets/d8935721-429e-4bb1-9c64-28778e30fff9" />
 
 The result shows your Vata, Pitta, and Kapha percentages, plus tabs for **Overview**, **Diet & Food**, **Herbs**, **Lifestyle**, and **Yoga**.
 
