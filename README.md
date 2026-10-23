@@ -1,7 +1,21 @@
-
-# Ayurveda Wellness Platform
+# 🌿 Ayurveda Wellness Platform
 
 A full-stack Ayurveda wellness project that combines classical formulation search, a questionnaire-based dosha assessment, and personalized diet planning. The interface is built with React; the application APIs use Flask and Express; MySQL stores user and assessment data.
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+## Table of contents
+
+- [What the project does](#what-the-project-does)
+- [Screenshots](#screenshots)
+- [Tech stack](#tech-stack)
+- [Project layout](#project-layout)
+- [Requirements](#requirements)
+- [Local setup](#local-setup)
+- [Run the application](#run-the-application)
+- [API routes](#api-routes)
+- [Notes](#notes)
+- [Disclaimer](#disclaimer)
 
 ## What the project does
 
@@ -10,7 +24,59 @@ A full-stack Ayurveda wellness project that combines classical formulation searc
 - **Diet planner:** Build a plan from dosha, goal, lifestyle, season, and optional blood-report data. The UI supports PDF upload and manual marker entry; the Flask service parses PDFs and can use the Groq API for generated plan content.
 - **Accounts:** Sign up and log in through the Express authentication API. Passwords are hashed with bcrypt and login returns a JWT.
 
-This is a learning and wellness information project. Recommendations are informational and are not a substitute for advice from a qualified healthcare professional.
+## Screenshots
+
+### Sign in
+
+Secure login with email and password. New users can create an account from the same screen.
+
+<img width="959" height="436" alt="Screenshot 2026-10-23 180542" src="https://github.com/user-attachments/assets/9ce6495a-c174-4e9a-9b2f-5651cf8d1079" />
+
+
+### Dashboard and modules
+
+After signing in, the dashboard shows platform stats (formulations, herbs, conditions, categories) and three wellness modules: **Ayurveda Recommendation**, **Dosha Detector**, and **Diet Planner**.
+
+![Dashboard overview](docs/screenshots/dashboard.png)
+
+![Wellness modules](docs/screenshots/modules.png)
+
+### Ayurveda recommendation
+
+Search by symptom, ingredient, or condition (for example, "I have cold and cough"). Results show the formulation type, dosha, matching tags, and suitable specialists, with category and specialist filters, sorting, and grid/list views.
+
+![Ayurveda recommendation search](docs/screenshots/recommend.png)
+
+### Dosha detector
+
+A guided 25-question assessment covering body, skin, digestion, and more. Progress is tracked as you move through the questions.
+
+![Dosha detector intro](docs/screenshots/dosha-intro.png)
+
+![Dosha assessment question](docs/screenshots/dosha-question.png)
+
+The result shows your Vata, Pitta, and Kapha percentages, plus tabs for **Overview**, **Diet & Food**, **Herbs**, **Lifestyle**, and **Yoga**.
+
+![Dosha result](docs/screenshots/dosha-result.png)
+
+### Diet planner (Ayur Ahāra)
+
+Choose your dosha, goal, lifestyle, and season, and optionally add blood-report values by PDF upload or manual entry. The plan includes meals by time of day, timing, spice blends, eating rules, foods to avoid, and herbs.
+
+![Diet planner](docs/screenshots/diet-planner.png)
+
+![Diet planner meal plan and blood report input](docs/screenshots/diet-planner-meals.png)
+
+## Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | React (Create React App) |
+| Wellness API | Flask (Python) |
+| Auth API | Express (Node.js), bcrypt, JWT |
+| Database | MySQL |
+| ML / data | Random Forest dosha model, CSV datasets |
+| AI diet generation | Groq API (optional) |
 
 ## Project layout
 
@@ -21,7 +87,8 @@ This is a learning and wellness information project. Recommendations are informa
 │   └── src/pages/                # Login, signup, dashboard, recommend, dosha, diet
 ├── backend/                      # Express authentication API
 │   ├── server.js
-│   └── routes/auth.js             # Signup and login endpoints
+│   └── routes/auth.js            # Signup and login endpoints
+├── docs/screenshots/             # README screenshots
 ├── db.py                         # MySQL connection used by Flask
 ├── diet_engine.py                # Diet-plan rules and data
 ├── dosha.py                      # Dosha mapping and scoring/model helpers
@@ -52,7 +119,7 @@ python -m pip install -r requirements.txt
 python -m pip install mysql-connector-python
 ```
 
-If PowerShell blocks activation, use `\.venv\Scripts\python.exe -m pip install -r requirements.txt` and the same interpreter to launch the API.
+If PowerShell blocks activation, use `.\.venv\Scripts\python.exe -m pip install -r requirements.txt` and the same interpreter to launch the API.
 
 ### 2. Prepare MySQL
 
@@ -75,7 +142,7 @@ GROQ_MODEL=llama-3.3-70b-versatile
 PORT=5050
 ```
 
-Do not publish `.env` files or API keys. Without a Groq key, endpoints that rely on Groq-generated output may return an error; local rule-based functionality may still be available.
+Do not publish `.env` files or API keys. Without a Groq key, endpoints that rely on Groq-generated output may return an error; local rule-based functionality may still be available (the diet planner shows a **Local Plan** badge when it falls back to rule-based output).
 
 ### 4. Install frontend dependencies
 
@@ -90,13 +157,13 @@ The frontend's development proxy forwards recommendation, dosha, and diet reques
 
 Start each service in its own terminal, from the repository root:
 
-**Terminal 1 — Flask wellness API**
+**Terminal 1: Flask wellness API**
 
 ```powershell
 python api_server.py
 ```
 
-**Terminal 2 — Express authentication API**
+**Terminal 2: Express authentication API**
 
 ```powershell
 cd backend
@@ -104,7 +171,7 @@ npm install
 npm start
 ```
 
-**Terminal 3 — React frontend**
+**Terminal 3: React frontend**
 
 ```powershell
 cd ayurved-ai
@@ -141,4 +208,6 @@ Open [http://localhost:3000](http://localhost:3000). Flask listens on port `5050
 - Several datasets and helper scripts in the root support model training, balancing, and experimentation; they are not separate servers to launch.
 - If the frontend cannot reach Flask, confirm Flask is running on port `5050`. If sign-in fails, confirm MySQL is running, the `users` table exists in the database configured by `backend/.env`, and Express is running on port `5000`.
 
-# Ayurveda_Wellness_Website
+## Disclaimer
+
+This is a learning and wellness information project. Recommendations are informational and are not a substitute for advice from a qualified healthcare professional.
