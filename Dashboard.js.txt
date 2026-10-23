@@ -1,0 +1,165 @@
+Dashboard.js
+import { useNavigate } from "react-router-dom";
+
+export default function Dashboard() {
+  const nav = useNavigate();
+
+  const modules = [
+    {
+      name: "Ayurveda Recommendation",
+      desc: "Get formulations based on symptoms",
+      route: "/recommend"
+    },
+    {
+      name: "Dosha Detector",
+      desc: "Find your body type",
+      route: "/dosha"
+    },
+    {
+      name: "Diet Planner",
+      desc: "Personalized diet based on dosha",
+      route: "/diet"
+    }
+  ];
+
+  return (
+    <div style={{ fontFamily: "serif" }}>
+      
+      {/* Header */}
+      <div style={{
+        background: "#7A3A0A",
+        color: "#FFF",
+        padding: "40px",
+        textAlign: "center"
+      }}>
+        <h1>🌿 Ayurveda Wellness Dashboard 🌿</h1>
+        <p>Your personalized Ayurvedic assistant</p>
+      </div>
+
+      {/* Cards */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+        gap: 20,
+        padding: 40
+      }}>
+        {modules.map((m, i) => (
+          <div
+            key={i}
+            onClick={() => nav(m.route)}
+            style={{
+              border: "1px solid #E5D3B3",
+              borderRadius: 16,
+              padding: 20,
+              cursor: "pointer",
+              background: "#FFF8F0",
+              transition: "0.3s"
+            }}
+          >
+            <h2>{m.name}</h2>
+            <p>{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+Diet.js
+
+export default function Diet() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h2>Diet Planner</h2>
+      <p>Coming soon...</p>
+    </div>
+  );
+}
+
+Dosha.js
+export default function Dosha() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h2>Dosha Detector</h2>
+      <p>Coming soon...</p>
+    </div>
+  );
+}
+
+Login.js
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+export default function Login() {
+  const nav = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    if (email && password) {
+      nav("/dashboard");
+    }
+  };
+
+  return (
+    <div style={{ textAlign: "center", padding: 100 }}>
+      <h2>Login</h2>
+
+      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
+      <br /><br />
+
+      <input type="password" placeholder="Password"
+        onChange={e => setPassword(e.target.value)} />
+      <br /><br />
+
+      <button onClick={handleLogin}>Login</button>
+
+      <p onClick={() => nav("/signup")} style={{ cursor: "pointer" }}>
+        Create Account
+      </p>
+    </div>
+  );
+}
+
+signup
+import { useNavigate } from "react-router-dom";
+
+export default function Signup() {
+  const nav = useNavigate();
+
+  return (
+    <div style={{ textAlign: "center", padding: 100 }}>
+      <h2>Signup</h2>
+
+      <input placeholder="Name" /><br /><br />
+      <input placeholder="Email" /><br /><br />
+      <input type="password" placeholder="Password" /><br /><br />
+
+      <button onClick={() => nav("/")}>Register</button>
+    </div>
+  );
+}
+
+App.js
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Recommend from "./pages/Recommend";
+import Dosha from "./pages/Dosha";
+import Diet from "./pages/Diet";
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/recommend" element={<Recommend />} />
+        <Route path="/dosha" element={<Dosha />} />
+        <Route path="/diet" element={<Diet />} />
+      </Routes>
+    </Router>
+  );
+}
