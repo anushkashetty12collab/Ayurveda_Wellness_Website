@@ -1,3 +1,4 @@
+
 # Ayurveda Wellness Platform
 
 A full-stack Ayurveda wellness project that combines classical formulation search, a questionnaire-based dosha assessment, and personalized diet planning. The interface is built with React; the application APIs use Flask and Express; MySQL stores user and assessment data.
@@ -139,3 +140,5 @@ Open [http://localhost:3000](http://localhost:3000). Flask listens on port `5050
 - The root `package-lock.json` is not the frontend manifest; install frontend packages inside `ayurved-ai/` and backend packages inside `backend/`.
 - Several datasets and helper scripts in the root support model training, balancing, and experimentation; they are not separate servers to launch.
 - If the frontend cannot reach Flask, confirm Flask is running on port `5050`. If sign-in fails, confirm MySQL is running, the `users` table exists in the database configured by `backend/.env`, and Express is running on port `5000`.
+
+# Ayurveda_Wellness_Website
