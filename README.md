@@ -2,7 +2,8 @@
 
 A full-stack Ayurveda wellness project that combines classical formulation search, a questionnaire-based dosha assessment, and personalized diet planning. The interface is built with React; the application APIs use Flask and Express; MySQL stores user and assessment data.
 
-![Dashboard](docs/screenshots/dashboard.png)
+<img width="959" height="433" alt="dashboard" src="https://github.com/user-attachments/assets/f78a78ef-5fb2-45b9-b6fb-2e2c80de03cd" />
+
 
 ## Table of contents
 
@@ -37,35 +38,42 @@ Secure login with email and password. New users can create an account from the s
 
 After signing in, the dashboard shows platform stats (formulations, herbs, conditions, categories) and three wellness modules: **Ayurveda Recommendation**, **Dosha Detector**, and **Diet Planner**.
 
-![Dashboard overview](docs/screenshots/dashboard.png)
 
-![Wellness modules](docs/screenshots/modules.png)
+<img width="959" height="433" alt="dashboard" src="https://github.com/user-attachments/assets/8e8d6419-d3e2-43b2-834d-dc50114bb800" />
+
+<img width="920" height="422" alt="modules" src="https://github.com/user-attachments/assets/fbb66df7-c900-4b11-ab6b-9f8215de355c" />
 
 ### Ayurveda recommendation
 
 Search by symptom, ingredient, or condition (for example, "I have cold and cough"). Results show the formulation type, dosha, matching tags, and suitable specialists, with category and specialist filters, sorting, and grid/list views.
 
-![Ayurveda recommendation search](docs/screenshots/recommend.png)
+<img width="959" height="435" alt="recommend" src="https://github.com/user-attachments/assets/328e08b7-ccd3-40b1-87b1-ccab90efb565" />
+
 
 ### Dosha detector
 
 A guided 25-question assessment covering body, skin, digestion, and more. Progress is tracked as you move through the questions.
 
-![Dosha detector intro](docs/screenshots/dosha-intro.png)
+<img width="953" height="419" alt="dosha-question" src="https://github.com/user-attachments/assets/d8935721-429e-4bb1-9c64-28778e30fff9" />
 
-![Dosha assessment question](docs/screenshots/dosha-question.png)
+<img width="947" height="435" alt="dosha-intro" src="https://github.com/user-attachments/assets/4f024efd-42b4-4585-9a5d-0a77019eda84" />
+
 
 The result shows your Vata, Pitta, and Kapha percentages, plus tabs for **Overview**, **Diet & Food**, **Herbs**, **Lifestyle**, and **Yoga**.
 
-![Dosha result](docs/screenshots/dosha-result.png)
+<img width="944" height="436" alt="dosha-result" src="https://github.com/user-attachments/assets/b4809df3-e518-4b7d-8f48-dad883c815e5" />
+
 
 ### Diet planner (Ayur Ahāra)
 
 Choose your dosha, goal, lifestyle, and season, and optionally add blood-report values by PDF upload or manual entry. The plan includes meals by time of day, timing, spice blends, eating rules, foods to avoid, and herbs.
 
-![Diet planner](docs/screenshots/diet-planner.png)
 
-![Diet planner meal plan and blood report input](docs/screenshots/diet-planner-meals.png)
+<img width="959" height="442" alt="diet-planner" src="https://github.com/user-attachments/assets/7b3f48dd-22ba-44a4-9583-87434079afc3" />
+
+<img width="920" height="422" alt="modules" src="https://github.com/user-attachments/assets/fbb66df7-c900-4b11-ab6b-9f8215de355c" />
+
+
 
 ## Tech stack
 
