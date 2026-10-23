@@ -70,7 +70,7 @@ Choose your dosha, goal, lifestyle, and season, and optionally add blood-report 
 
 <img width="959" height="442" alt="diet-planner" src="https://github.com/user-attachments/assets/7b3f48dd-22ba-44a4-9583-87434079afc3" />
 
-<img width="920" height="422" alt="modules" src="https://github.com/user-attachments/assets/fbb66df7-c900-4b11-ab6b-9f8215de355c" />
+<img width="959" height="437" alt="diet-planner-meals" src="https://github.com/user-attachments/assets/f12954c0-6dcf-4953-a7be-c788d1c115c8" />
 
 
 
